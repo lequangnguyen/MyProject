@@ -13,9 +13,6 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
-    ];
 
     /**
      * Register any application authentication / authorization services.
@@ -36,12 +33,6 @@ class AuthServiceProvider extends ServiceProvider
 
             return $this->can($user, $ability);
         });
-
-        // foreach ($permissions as $permission) {
-        //     $gate->define($permission->id, function ($user, $permission) {
-        //         return $this->can($user, $permission);
-        //     });
-        // }
     }
 
     private function can($user, $permission) {
